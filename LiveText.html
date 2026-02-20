@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Live Text Preview</title>
+</head>
+<body>
+
+<h2>Live Text Preview</h2>
+
+Enter Text:
+<input type="text" id="txt" onkeyup="showText()">
+
+<p id="output"></p>
+
+<script>
+
+function showText() {
+    let value = document.getElementById("txt").value;
+    document.getElementById("output").innerText = value;
+}
+
+</script>
+
+</body>
+</html>
