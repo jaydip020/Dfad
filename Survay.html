@@ -1,0 +1,86 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Survey Form</title>
+</head>
+<body>
+
+<h2>Student Survey</h2>
+
+<form id="survey_form">
+
+    Name: <br>
+    <input type="text" id="name"><br><br>
+
+    Rate Teaching: <br>
+    <select id="rating">
+        <option value="">Select</option>
+        <option>Excellent</option>
+        <option>Good</option>
+        <option>Average</option>
+        <option>Poor</option>
+    </select><br><br>
+
+    Subjects Liked: <br>
+    <input type="checkbox" name="subject"> Java
+    <input type="checkbox" name="subject"> JavaScript
+    <input type="checkbox" name="subject"> Python
+    <br><br>
+
+    Suggestions: <br>
+    <textarea id="suggestion"></textarea><br><br>
+
+    <button type="submit">Submit</button>
+
+</form>
+
+<script>
+
+document.getElementById("survey_form").addEventListener("submit", function(e){
+
+    let name = document.getElementById("name").value.trim();
+    let rating = document.getElementById("rating").value;
+    let subjects = document.getElementsByName("subject");
+    let suggestion = document.getElementById("suggestion").value.trim();
+
+    if(name === ""){
+        alert("Enter Name");
+        e.preventDefault();
+        return;
+    }
+
+    if(rating === ""){
+        alert("Select Rating");
+        e.preventDefault();
+        return;
+    }
+
+    let checked = false;
+    for(let i=0; i<subjects.length; i++){
+        if(subjects[i].checked){
+            checked = true;
+            break;
+        }
+    }
+
+    if(!checked){
+        alert("Select at least one subject");
+        e.preventDefault();
+        return;
+    }
+
+    if(suggestion.length < 5){
+        alert("Write proper suggestion");
+        e.preventDefault();
+        return;
+    }
+
+    alert("Survey Submitted Successfully");
+
+});
+
+</script>
+
+</body>
+</html>
