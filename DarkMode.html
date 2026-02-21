@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark mode</title>
+    <style>
+        .dark{
+            background-color:black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h2>
+        change dark mode
+    </h2>
+    <button id="changemode">click Dark Mode</button>
+    <script>
+        let changemode=document.getElementById("changemode");
+        changemode.addEventListener("click",function(){
+            if(document.body.classList.contains('dark')){
+                document.body.classList.remove('dark');
+            }
+            else{
+                document.body.classList.add('dark');
+            }
+        });
+    </script>
+</body>
+</html>
