@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz</title>
+</head>
+<body>
+
+<h2>JavaScript Quiz</h2>
+
+<form onsubmit="return checkQuiz()">
+
+1. JavaScript is?<br>
+<input type="radio" name="q1" value="a"> Programming Language
+<input type="radio" name="q1" value="b"> Database
+<br><br>
+
+2. Which symbol used for comments?<br>
+<input type="radio" name="q2" value="a"> //
+<input type="radio" name="q2" value="b"> ##
+<br><br>
+
+<input type="submit" value="Submit">
+
+</form>
+
+<script>
+function checkQuiz() {
+
+    var score = 0;
+
+    var q1 = document.getElementsByName("q1");
+    var q2 = document.getElementsByName("q2");
+
+    if (q1[0].checked) score++;
+    if (q2[0].checked) score++;
+
+    alert("Your Score: " + score + "/2");
+
+    return false; 
+}
+</script>
+
+</body>
+</html>
